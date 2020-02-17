@@ -1,5 +1,4 @@
 ALL_PY_SRCS := $(shell find src -name '*.py') \
-	$(shell find example -name '*.py') \
 	$(shell find test -name '*.py')
 
 .PHONY: all
@@ -24,7 +23,7 @@ lint:
 .ONESHELL:
 test:
 	. env/bin/activate && cd test
-	python -m coverage run -m pytest
+	python -m coverage run --source ordered_enum -m pytest
 	python -m coverage report -m --fail-under 100
 
 .PHONY: package
