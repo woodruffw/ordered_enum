@@ -30,6 +30,7 @@ test:
 .ONESHELL:
 package:
 	. env/bin/activate
+	rm -rf dist/*
 	python3 setup.py sdist
 	twine upload --repository pypi dist/*
 
