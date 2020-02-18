@@ -15,7 +15,7 @@ setup(
     license="MIT",
     author="William Woodruff",
     author_email="william@yossarian.net",
-    description="A class decorator for adding ordering to enums",
+    description="A small library for adding total orderings to enums",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/woodruffw/ordered_enum",
