@@ -1,6 +1,8 @@
 ordered_enum
 ============
 
+[![Build Status](https://img.shields.io/github/workflow/status/woodruffw/ordered_enum/CI/master)](https://github.com/woodruffw/ordered_enum/actions?query=workflow%3ACI)
+
 **ordered_enum** is a small library for adding (total) orderings to `enum.Enum`s.
 
 It provides two ordering behaviors:
