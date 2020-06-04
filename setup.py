@@ -12,7 +12,7 @@ with open("./README.md") as f:
 setup(
     name="ordered_enum",
     version=version["__version__"],
-    license="MIT",
+    license="MIT with restrictions",
     author="William Woodruff",
     author_email="william@yossarian.net",
     description="A small library for adding total orderings to enums",

@@ -1,6 +1,7 @@
 ordered_enum
 ============
 
+![license](https://raster.shields.io/badge/license-MIT%20with%20restrictions-green.png)
 [![Build Status](https://img.shields.io/github/workflow/status/woodruffw/ordered_enum/CI/master)](https://github.com/woodruffw/ordered_enum/actions?query=workflow%3ACI)
 
 **ordered_enum** is a small library for adding (total) orderings to `enum.Enum`s.
