@@ -22,7 +22,7 @@ setup(
     packages=["ordered_enum"],
     package_dir={"": "src"},
     platforms="any",
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     extras_require={
         "dev": [
             "flake8",
