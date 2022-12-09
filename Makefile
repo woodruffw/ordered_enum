@@ -11,28 +11,21 @@ dev:
 	. env/bin/activate && pip install -e .[dev]
 
 .PHONY: lint
-.ONESHELL:
 lint:
-	. env/bin/activate
-	black $(ALL_PY_SRCS)
-	isort $(ALL_PY_SRCS)
-	flake8 $(ALL_PY_SRCS)
-	git diff --exit-code
+	. env/bin/activate && \
+		black $(ALL_PY_SRCS) && \
+		isort $(ALL_PY_SRCS) && \
+		flake8 $(ALL_PY_SRCS) && \
+		git diff --exit-code
 
 .PHONY: test
-.ONESHELL:
 test:
-	. env/bin/activate && cd test
-	python -m coverage run -m pytest
-	python -m coverage report -m --fail-under 100
+	./env/bin/python -m coverage run -m pytest
+	./env/bin/python -m coverage report -m --fail-under 100
 
 .PHONY: package
-.ONESHELL:
 package:
-	. env/bin/activate
-	rm -rf dist/*
-	python3 setup.py sdist
-	twine upload --repository pypi dist/*
+	./env/bin/python -m build
 
 .PHONY: edit
 edit:

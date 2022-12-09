@@ -1,3 +1,33 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "ordered_enum"
+dynamic = ["version"]
+description = "A small library for adding total orderings to enums"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "William Woodruff", email = "william@yossarian.net" },
+]
+requires-python = ">=3.7"
+
+[project.optional-dependencies]
+dev = [
+  "flake8",
+  "black",
+  "isort[pyproject]",
+  "pytest",
+  "coverage",
+  "build",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/ordered_enum/"
+Issues = "https://github.com/woodruffw/ordered_enum/issues"
+Source = "https://github.com/woodruffw/ordered_enum"
+
 [tool.isort]
 line_length = 100
 multi_line_output = 3
