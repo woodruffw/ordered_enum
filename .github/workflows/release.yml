@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+
     - uses: actions/setup-python@v4
+      with:
+        python-version: "3.x"
+
     - name: create release
       id: create_release
       uses: actions/create-release@v1
@@ -22,12 +26,14 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: ${{ contains(github.ref, 'pre') || contains(github.ref, 'rc') }}
+
     - name: build
       run: |
         make dev
         make package
+
     - name: publish
-      uses: pypa/gh-action-pypi-publish@master
+      uses: pypa/gh-action-pypi-publish@v1.6.4
       with:
         user: __token__
         password: ${{ secrets.PYPI_TOKEN }}
