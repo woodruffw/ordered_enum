@@ -22,8 +22,10 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: ${{ contains(github.ref, 'pre') || contains(github.ref, 'rc') }}
-    - name: sdist
-      run: python3 setup.py sdist
+    - name: build
+      run: |
+        make dev
+        make package
     - name: publish
       uses: pypa/gh-action-pypi-publish@master
       with:
