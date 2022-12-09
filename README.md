@@ -1,7 +1,6 @@
 ordered_enum
 ============
 
-![license](https://raster.shields.io/badge/license-MIT%20with%20restrictions-green.png)
 [![Build Status](https://img.shields.io/github/workflow/status/woodruffw/ordered_enum/CI/master)](https://github.com/woodruffw/ordered_enum/actions?query=workflow%3ACI)
 [![Downloads](https://pepy.tech/badge/ordered-enum)](https://pepy.tech/project/ordered-enum)
 
