@@ -21,6 +21,7 @@ dev = [
   "pytest",
   "coverage",
   "build",
+  "mypy",
 ]
 
 [project.urls]
