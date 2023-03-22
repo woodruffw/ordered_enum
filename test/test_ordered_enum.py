@@ -75,6 +75,7 @@ def test_total_value_ordering_unsound():
     assert not (X.Foo < X.Bar)
     assert not (X.Foo > X.Bar)
 
+
 def test_mypy_success():
     from mypy import api
 
