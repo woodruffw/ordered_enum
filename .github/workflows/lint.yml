@@ -8,18 +8,14 @@ on:
 
 jobs:
   lint:
-    strategy:
-      matrix:
-        python:
-          - "3.11"
-
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python }}
+          python-version: "3.x"
 
       - name: deps
         run: make dev
