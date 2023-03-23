@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.x"
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
 
       - name: deps
         run: make dev
