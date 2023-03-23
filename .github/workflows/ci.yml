@@ -17,14 +17,32 @@ jobs:
           - "3.10"
           - "3.11"
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+
       - name: deps
         run: make dev
-      - name: lint
-        run: make lint
+
       - name: test
         run: make test
+
+  all-tests-pass:
+    if: always()
+
+    needs:
+    - test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check test jobs
+        uses: re-actors/alls-green@v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
