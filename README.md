@@ -1,7 +1,7 @@
 ordered_enum
 ============
 
-[![Build Status](https://img.shields.io/github/workflow/status/woodruffw/ordered_enum/CI/master)](https://github.com/woodruffw/ordered_enum/actions?query=workflow%3ACI)
+[![CI](https://github.com/woodruffw/ordered_enum/actions/workflows/ci.yml/badge.svg)](https://github.com/woodruffw/ordered_enum/actions/workflows/ci.yml)
 [![Downloads](https://pepy.tech/badge/ordered-enum)](https://pepy.tech/project/ordered-enum)
 
 **ordered_enum** is a small library for adding (total) orderings to `enum.Enum`s.
@@ -13,7 +13,7 @@ It provides two ordering behaviors:
 
 ## Installation
 
-**ordered_enum** requires Python 3.6 or newer.
+**ordered_enum** requires Python 3.7 or newer.
 
 ```bash
 pip3 install ordered_enum
