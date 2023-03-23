@@ -30,3 +30,17 @@ jobs:
 
       - name: test
         run: make test
+
+  all-tests-pass:
+    if: always()
+
+    needs:
+    - test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check test jobs
+        uses: re-actors/alls-green@v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
