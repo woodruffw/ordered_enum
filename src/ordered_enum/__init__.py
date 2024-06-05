@@ -1,4 +1,9 @@
-__all__ = ["OrderedEnum", "ValueOrderedEnum", "__version__"]
+__all__ = [
+    "__version__",
+    "OrderedEnum",
+    "ValueOrderedEnum",
+]
+
 from ordered_enum.ordered_enum import OrderedEnum
 from ordered_enum.ordered_enum import ValueOrderedEnum
 
