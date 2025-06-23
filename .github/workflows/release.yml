@@ -21,11 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - uses: actions/setup-python@v5
-      with:
-        python-version: "3.x"
-        cache: "pip"
-        cache-dependency-path: pyproject.toml
+    - uses: astral-sh/setup-uv@v6
 
     - name: build
       run: |
@@ -35,9 +31,4 @@ jobs:
     - name: publish
       uses: pypa/gh-action-pypi-publish@v1.12.4
 
-    - name: sign
-      uses: sigstore/gh-action-sigstore-python@v3.0.1
-      with:
-        inputs: ./dist/*.tar.gz ./dist/*.whl
-        release-signing-artifacts: true
 
