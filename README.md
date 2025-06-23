@@ -13,7 +13,7 @@ It provides two ordering behaviors:
 
 ## Installation
 
-**ordered_enum** requires Python 3.7 or newer.
+**ordered_enum** requires Python 3.9 or newer.
 
 ```bash
 pip3 install ordered_enum
