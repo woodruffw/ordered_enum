@@ -5,6 +5,8 @@ on:
 
 name: release
 
+permissions: {}
+
 jobs:
   pypi:
     name: upload release to PyPI
@@ -19,13 +21,13 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/checkout@v4
-
-    - uses: actions/setup-python@v5
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
-        python-version: "3.x"
-        cache: "pip"
-        cache-dependency-path: pyproject.toml
+        persist-credentials: false
+
+    - uses: astral-sh/setup-uv@445689ea25e0de0a23313031f5fe577c74ae45a1 # v6.3.0
+      with:
+        enable-cache: false
 
     - name: build
       run: |
@@ -33,11 +35,6 @@ jobs:
         make package
 
     - name: publish
-      uses: pypa/gh-action-pypi-publish@v1.12.4
+      uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
 
-    - name: sign
-      uses: sigstore/gh-action-sigstore-python@v3.0.1
-      with:
-        inputs: ./dist/*.tar.gz ./dist/*.whl
-        release-signing-artifacts: true
 

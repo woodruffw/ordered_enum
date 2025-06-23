@@ -6,26 +6,28 @@ on:
       - master
   pull_request:
 
+permissions: {}
+
 jobs:
   test:
     strategy:
       matrix:
         python:
-          - "3.8"
           - "3.9"
           - "3.10"
           - "3.11"
           - "3.12"
+          - "3.13"
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@445689ea25e0de0a23313031f5fe577c74ae45a1 # v6.3.0
         with:
           python-version: ${{ matrix.python }}
-          cache: "pip"
-          cache-dependency-path: pyproject.toml
 
       - name: deps
         run: make dev
@@ -43,6 +45,6 @@ jobs:
 
     steps:
       - name: check test jobs
-        uses: re-actors/alls-green@v1.2.2
+        uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe # v1.2.2
         with:
           jobs: ${{ toJSON(needs) }}

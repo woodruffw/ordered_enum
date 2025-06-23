@@ -8,10 +8,8 @@ dynamic = ["version"]
 description = "A small library for adding total orderings to enums"
 readme = "README.md"
 license = { file = "LICENSE" }
-authors = [
-    { name = "William Woodruff", email = "william@yossarian.net" },
-]
-requires-python = ">=3.7"
+authors = [{ name = "William Woodruff", email = "william@yossarian.net" }]
+requires-python = ">=3.9"
 
 [project.optional-dependencies]
 dev = [
