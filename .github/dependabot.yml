@@ -6,6 +6,10 @@ updates:
       interval: weekly
     cooldown:
       default-days: 7
+    groups:
+      uv:
+        patterns:
+          - "*"
 
   - package-ecosystem: github-actions
     directory: /
@@ -13,3 +17,7 @@ updates:
       interval: weekly
     cooldown:
       default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - "*"
